@@ -1,0 +1,92 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #4f46e5;
+  --primary-light: #818cf8;
+  --primary-dark: #3730a3;
+  --accent: #f59e0b;
+  --bg: #f1f5f9;
+  --surface: #ffffff;
+  --surface2: #f8fafc;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --success: #10b981;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+#root { min-height: 100vh; }
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+input, select {
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.65rem 1rem;
+  outline: none;
+  width: 100%;
+  background: var(--surface);
+  color: var(--text);
+  transition: border-color 0.15s;
+}
+
+input:focus, select:focus { border-color: var(--primary); }
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 0.7rem 1.5rem;
+}
+.btn-primary:hover:not(:disabled) { background: var(--primary-dark); transform: translateY(-1px); }
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--primary);
+  border: 1.5px solid var(--border);
+  padding: 0.65rem 1.2rem;
+}
+.btn-secondary:hover:not(:disabled) { border-color: var(--primary); background: #eef2ff; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+  padding: 0.5rem 0.8rem;
+  font-size: 0.85rem;
+}
+.btn-ghost:hover { color: var(--text); background: var(--bg); }
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.prose p { margin-bottom: 0.75rem; }
+.prose p:last-child { margin-bottom: 0; }
+.prose ul, .prose ol { margin: 0.5rem 0 0.75rem 1.5rem; }
+.prose li { margin-bottom: 0.3rem; }
+.prose strong { font-weight: 600; }
+.prose code { background: #f1f5f9; padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em; font-family: monospace; }

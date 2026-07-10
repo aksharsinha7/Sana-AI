@@ -1,0 +1,150 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.headerInner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.greetingEmoji {
+  font-size: 2rem;
+}
+
+.name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.grade {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.section {}
+
+.sectionTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.subjectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.subjectCard {
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.15s ease;
+  box-shadow: var(--shadow);
+}
+
+.subjectCard:hover:not(:disabled) {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.subjectIcon {
+  font-size: 2.2rem;
+}
+
+.subjectName {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.loading {
+  font-size: 0.75rem;
+  color: var(--primary);
+}
+
+.sessionList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sessionCard {
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.sessionCard:hover {
+  border-color: var(--primary);
+  background: #f8f7ff;
+}
+
+.sessionIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.sessionInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sessionSubject {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.sessionMeta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.sessionArrow {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
