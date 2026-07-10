@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
@@ -8,16 +9,12 @@ from ai_tutor import get_ai_response, GRADE_PROFILES, SUBJECTS
 
 app = FastAPI(title="AI Teacher API")
 
-import os
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
         "http://localhost:5173",
         os.getenv("FRONTEND_URL", ""),
-        # Vercel preview + production URLs
-        "https://*.vercel.app",
     ],
     allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
