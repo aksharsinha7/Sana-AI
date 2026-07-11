@@ -43,8 +43,8 @@ export default function Chat({ student, session, onBack }) {
     setMessages(prev => [...prev, { role: "user", content: msg }]);
     setLoading(true);
     try {
-      const { reply } = await api.sendMessage(session.id, msg);
-      setMessages(prev => [...prev, { role: "assistant", content: reply }]);
+      const { reply, image } = await api.sendMessage(session.id, msg);
+      setMessages(prev => [...prev, { role: "assistant", content: reply, image }]);
     } catch (err) {
       setMessages(prev => [...prev, { role: "assistant", content: "Sorry, something went wrong. Please try again." }]);
     } finally {
@@ -102,14 +102,27 @@ export default function Chat({ student, session, onBack }) {
             {msg.role === "assistant" && (
               <div className={styles.avatar}>🤖</div>
             )}
-            <div className={styles.bubble}>
-              {msg.role === "assistant" ? (
-                <div className="prose">
-                  <ReactMarkdown>{msg.content}</ReactMarkdown>
+            <div className={styles.bubbleWrapper}>
+              {msg.role === "assistant" && msg.image && (
+                <div className={styles.imageCard}>
+                  <img
+                    src={msg.image.url}
+                    alt={msg.image.caption}
+                    className={styles.topicImage}
+                    onError={e => e.target.parentElement.style.display = "none"}
+                  />
+                  <span className={styles.imageCaption}>{msg.image.caption}</span>
                 </div>
-              ) : (
-                <p>{msg.content}</p>
               )}
+              <div className={styles.bubble}>
+                {msg.role === "assistant" ? (
+                  <div className="prose">
+                    <ReactMarkdown>{msg.content}</ReactMarkdown>
+                  </div>
+                ) : (
+                  <p>{msg.content}</p>
+                )}
+              </div>
             </div>
             {msg.role === "user" && (
               <div className={styles.avatar}>{student.name[0].toUpperCase()}</div>

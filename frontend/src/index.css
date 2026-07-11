@@ -86,7 +86,10 @@ input:focus, select:focus { border-color: var(--primary); }
 
 .prose p { margin-bottom: 0.75rem; }
 .prose p:last-child { margin-bottom: 0; }
-.prose ul, .prose ol { margin: 0.5rem 0 0.75rem 1.5rem; }
+.prose ul { margin: 0.5rem 0 0.75rem 1.5rem; }
+.prose ol { margin: 0.6rem 0 0.75rem 0; padding: 0; list-style: none; counter-reset: steps; }
+.prose ol li { counter-increment: steps; display: flex; gap: 0.7rem; align-items: flex-start; margin-bottom: 0.6rem; padding: 0.5rem 0.75rem; background: #f8f7ff; border-radius: 8px; border-left: 3px solid var(--primary); }
+.prose ol li::before { content: counter(steps); background: var(--primary); color: white; font-size: 0.75rem; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
 .prose li { margin-bottom: 0.3rem; }
-.prose strong { font-weight: 600; }
+.prose strong { font-weight: 600; color: #3730a3; }
 .prose code { background: #f1f5f9; padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em; font-family: monospace; }

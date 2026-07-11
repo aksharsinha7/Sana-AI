@@ -105,8 +105,40 @@
 .message {
   display: flex;
   gap: 0.7rem;
-  align-items: flex-end;
+  align-items: flex-start;
   max-width: 85%;
+}
+
+.bubbleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 100%;
+}
+
+.imageCard {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 0.6rem 0.8rem;
+  box-shadow: var(--shadow);
+}
+
+.topicImage {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.imageCaption {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
 }
 
 .message.user {

@@ -142,16 +142,16 @@ def chat(data: ChatMessage, db: Session = Depends(get_db)):
     )
     conversation_history = [{"role": m.role, "content": m.content} for m in all_messages]
 
-    # Get AI response
-    ai_reply = get_ai_response(
+    # Get AI response + image
+    result = get_ai_response(
         grade=session.student.grade,
         subject=session.subject,
         conversation_history=conversation_history,
     )
 
     # Save AI response
-    ai_msg = Message(session_id=data.session_id, role="assistant", content=ai_reply)
+    ai_msg = Message(session_id=data.session_id, role="assistant", content=result["reply"])
     db.add(ai_msg)
     db.commit()
 
-    return {"reply": ai_reply}
+    return {"reply": result["reply"], "image": result["image"]}
