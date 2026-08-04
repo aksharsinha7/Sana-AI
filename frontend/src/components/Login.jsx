@@ -31,8 +31,10 @@ export default function Login({ onLogin }) {
   return (
     <div className={styles.page}>
       <div className={styles.card}>
-        <div className={styles.logo}>📚</div>
-        <h1 className={styles.title}>AI Teacher</h1>
+        <div className={styles.logoRow}>
+          <span className={styles.logoIcon}>✦</span>
+          <span className={styles.logoText}>Sana AI</span>
+        </div>
         <p className={styles.subtitle}>Your personal learning companion</p>
 
         <form onSubmit={handleSubmit} className={styles.form}>

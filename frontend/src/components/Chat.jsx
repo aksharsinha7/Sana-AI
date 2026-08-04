@@ -68,10 +68,10 @@ export default function Chat({ student, session, onBack }) {
       <header className={styles.header}>
         <button className="btn-ghost" onClick={onBack}>← Back</button>
         <div className={styles.headerCenter}>
-          <span className={styles.subjectIcon}>{SUBJECT_ICONS[session.subject] || "📚"}</span>
+          <span className={styles.sanaLogo}>✦</span>
           <div>
-            <div className={styles.subjectName}>{session.subject}</div>
-            <div className={styles.studentInfo}>{student.name} · {student.grade_label}</div>
+            <div className={styles.sanaName}>Sana AI</div>
+            <div className={styles.studentInfo}>{session.subject} · {student.name} · {student.grade_label}</div>
           </div>
         </div>
         <div style={{ width: 80 }} />
@@ -100,7 +100,7 @@ export default function Chat({ student, session, onBack }) {
         {messages.map((msg, i) => (
           <div key={i} className={`${styles.message} ${styles[msg.role]}`}>
             {msg.role === "assistant" && (
-              <div className={styles.avatar}>🤖</div>
+              <div className={`${styles.avatar} ${styles.sanaAvatar}`}>✦</div>
             )}
             <div className={styles.bubbleWrapper}>
               {msg.role === "assistant" && msg.image && (
@@ -132,7 +132,7 @@ export default function Chat({ student, session, onBack }) {
 
         {loading && (
           <div className={`${styles.message} ${styles.assistant}`}>
-            <div className={styles.avatar}>🤖</div>
+            <div className={`${styles.avatar} ${styles.sanaAvatar}`}>✦</div>
             <div className={`${styles.bubble} ${styles.typing}`}>
               <span /><span /><span />
             </div>

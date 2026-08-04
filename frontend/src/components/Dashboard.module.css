@@ -18,6 +18,28 @@
   justify-content: space-between;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.brandIcon {
+  font-size: 1.3rem;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.brandName {
+  font-size: 1.25rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.3px;
+}
+
 .greeting {
   display: flex;
   align-items: center;

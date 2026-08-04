@@ -26,6 +26,22 @@
   font-size: 1.8rem;
 }
 
+.sanaLogo {
+  font-size: 1.6rem;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.sanaName {
+  font-weight: 800;
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.3px;
+}
+
 .subjectName {
   font-weight: 700;
   font-size: 1rem;
@@ -35,6 +51,11 @@
 .studentInfo {
   font-size: 0.8rem;
   color: var(--text-muted);
+}
+
+.sanaAvatar {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%) !important;
+  font-size: 1rem !important;
 }
 
 .messages {

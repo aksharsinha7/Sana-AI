@@ -39,6 +39,10 @@ export default function Dashboard({ student, onStartSession, onLogout }) {
     <div className={styles.page}>
       <header className={styles.header}>
         <div className={styles.headerInner}>
+          <div className={styles.brand}>
+            <span className={styles.brandIcon}>✦</span>
+            <span className={styles.brandName}>Sana AI</span>
+          </div>
           <div className={styles.greeting}>
             <span className={styles.greetingEmoji}>👋</span>
             <div>
